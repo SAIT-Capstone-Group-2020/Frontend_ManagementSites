@@ -1,15 +1,12 @@
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class FileManager {
 
     public String fileName;
-    // public ArrayList<Item> items;
+    // public ArrayList<Item> items = new ArrayList<Item>();
 
     public FileManager(String fileName) {
         this.fileName = fileName;
@@ -18,13 +15,15 @@ public class FileManager {
     // ArrayList<Item>
     public void readFile() throws IOException {
 
+        // Prints line that should have headers, will remove later
         BufferedReader fileData = new BufferedReader(new FileReader(this.fileName));
         System.out.println(fileData.readLine());
 
-        // change this for loop to a while loop, ending at end of file
-        for (int i = 0; i < 10; i++) {
+        // reads second line
+        String fileLine = fileData.readLine();
 
-            String fileLine = fileData.readLine();
+        // checks if the current line is null
+        while (fileLine != null) {
 
             String[] itemParts = fileLine.split(",");
 
@@ -35,8 +34,10 @@ public class FileManager {
             int quantity = Integer.parseInt(itemParts[4]);
             double weight = Double.parseDouble(itemParts[5]);
             String weightType = itemParts[6];
-            // add "Brand" to CSV file
             String brand = itemParts[7];
+
+            // retrieves next line
+            fileLine = fileData.readLine();
 
             // This line is used to print the line to the console, to test if it's read properly
             /*
@@ -48,8 +49,14 @@ public class FileManager {
             /*
              * Item newItem = new Item(productId, productName, price, category, quantity,
              * weight, weightType, brand);
+             * 
+             * items.add(newItem);
+             * 
              */
+
         }
 
+        fileData.close();
+        // return items;
     }
 }

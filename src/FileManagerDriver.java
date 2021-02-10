@@ -18,7 +18,7 @@ public class FileManagerDriver {
 
         FileManager fileManager = new FileManager(file);
 
-        fileManager.readFile();
+        fileManager.writeFile();
 
         fileName.close();
     }

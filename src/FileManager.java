@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -59,4 +61,33 @@ public class FileManager {
         fileData.close();
         // return items;
     }
+
+    // METHOD WILL BE UNCOMMENTED WHEN FIELDS ARE APPROVED BY BACKEND TEAM AND CONNECTION IS READY
+
+     /* public void writeFile(ArrayList<String> items) throws IOException {
+        BufferedWriter fileData = new BufferedWriter(new FileWriter(this.fileName));
+
+        for (int i = 0; i < items.size(); i++) {
+
+            Item item = items.get(i);
+            
+            String productId = (String) item.getProductId();
+            String productName = item.getProductName();
+            String price = (String) item.getPrice();
+            String category = item.getCategory();
+            String quantity = (String) item.getQuantity();
+            String weight = (String) item.getWeight();
+            String weightType = item.getWeightType();
+            String brand = item.getBrand();
+
+            fileData.write(productId + "," + productName + "," + price + "," + category 
+            + "," + quantity + "," + weight + "," + weightType + "," + brand);
+            
+            fileData.newLine();
+        }
+
+        fileData.close();
+    }
+    */
+    
 }

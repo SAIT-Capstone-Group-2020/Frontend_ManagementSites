@@ -34,7 +34,7 @@ public class FileManager {
             String brand = itemParts[2];
             double price = Double.parseDouble(itemParts[3]);
             int category = Integer.parseInt(itemParts[4]);
-            int active = Integer.parseInt(itemParts[5]);
+            boolean active = Boolean.parseBoolean(itemParts[5]);
             int quantity = Integer.parseInt(itemParts[6]);
             double weight = Double.parseDouble(itemParts[7]);
             int weightType = Integer.parseInt(itemParts[8]);

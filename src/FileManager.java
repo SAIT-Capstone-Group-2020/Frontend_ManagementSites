@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class FileManager {
 
     public String fileName;
-    // public ArrayList<Item> items = new ArrayList<Item>();
+    // public ArrayList<Product> product = new ArrayList<Product>();
 
     public FileManager(String fileName) {
         this.fileName = fileName;
@@ -51,10 +51,10 @@ public class FileManager {
 
             // This line is used to create a new object when the backend connection is made
             /*
-             * Item newItem = new Item(productId, productName, price, category, quantity,
-             * weight, weightType, brand);
+             * Product newProduct = new Product(productName, description, brand, price, category, active, 
+              quantity, weight, weightType);
              * 
-             * items.add(newItem);
+             * products.add(newProduct);
              * 
              */
 
@@ -66,22 +66,22 @@ public class FileManager {
 
     // METHOD WILL BE UNCOMMENTED WHEN CONNECTION IS READY
 
-     /* public void writeFile(ArrayList<String> items) throws IOException {
+     /* public void writeFile(ArrayList<Product> products) throws IOException {
         BufferedWriter fileData = new BufferedWriter(new FileWriter(this.fileName));
 
-        for (int i = 0; i < items.size(); i++) {
+        for (int i = 0; i < products.size(); i++) {
 
-            Item item = items.get(i);
+            Product product = products.get(i);
             
-            String productName = item.getName();
-            String description = item.getDescription();
-            String brand = item.getBrand();
-            String price = (String) item.getPrice():
-            String category = (String) item.getCategory();
-            String active = (String) item.getActive();
-            String quantity = (String) item.getQuantity();
-            String weight = (String) item.getWeight();
-            String weightType = (String) item.getWeightType();
+            String productName = product.getName();
+            String description = product.getDescription();
+            String brand = product.getBrand();
+            String price = (String) product.getPrice():
+            String category = (String) product.getCategory();
+            String active = (String) product.getActive();
+            String quantity = (String) product.getQuantity();
+            String weight = (String) product.getWeight();
+            String weightType = (String) product.getWeightType();
 
             fileData.write(productName + "," + description + "," + brand + "," + price 
             + "," + category + "," + active + "," + quantity + "," + weight + "," + weightType);

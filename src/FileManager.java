@@ -29,23 +29,24 @@ public class FileManager {
 
             String[] itemParts = fileLine.split(",");
 
-            String productId = itemParts[0];
-            String productName = itemParts[1];
-            double price = Double.parseDouble(itemParts[2]);
-            String category = itemParts[3];
-            int quantity = Integer.parseInt(itemParts[4]);
-            double weight = Double.parseDouble(itemParts[5]);
-            String weightType = itemParts[6];
-            String brand = itemParts[7];
+            String productName = itemParts[0];
+            String description = itemParts[1];
+            String brand = itemParts[2];
+            double price = Double.parseDouble(itemParts[3]);
+            int category = Integer.parseInt(itemParts[4]);
+            int active = Integer.parseInt(itemParts[5]);
+            int quantity = Integer.parseInt(itemParts[6]);
+            double weight = Double.parseDouble(itemParts[7]);
+            int weightType = Integer.parseInt(itemParts[8]);
 
             // retrieves next line
             fileLine = fileData.readLine();
 
             // This line is used to print the line to the console, to test if it's read properly
-            /*
-             * System.out.printf("%s %10s %10f %10s %10d %10f %10s %10s %n", productId,
-             * productName, price, category, quantity, weight, weightType, brand);
-             */
+            
+              System.out.printf("%s %10s %10s %10.2f %10d %10d %10d %10.2f %10s %n", productName, description, brand, price, category, active, 
+              quantity, weight, weightType);
+             
 
             // This line is used to create a new object when the backend connection is made
             /*

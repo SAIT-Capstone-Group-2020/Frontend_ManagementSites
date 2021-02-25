@@ -44,8 +44,9 @@ public class FileManager {
 
             // This line is used to print the line to the console, to test if it's read properly
             
-              System.out.printf("%s %10s %10s %10.2f %10d %10d %10d %10.2f %10s %n", productName, description, brand, price, category, active, 
+              /* System.out.printf("%s %10s %10s %10.2f %10d %10d %10d %10.2f %10s %n", productName, description, brand, price, category, active, 
               quantity, weight, weightType);
+              */
              
 
             // This line is used to create a new object when the backend connection is made
@@ -63,7 +64,7 @@ public class FileManager {
         // return items;
     }
 
-    // METHOD WILL BE UNCOMMENTED WHEN FIELDS ARE APPROVED BY BACKEND TEAM AND CONNECTION IS READY
+    // METHOD WILL BE UNCOMMENTED WHEN CONNECTION IS READY
 
      /* public void writeFile(ArrayList<String> items) throws IOException {
         BufferedWriter fileData = new BufferedWriter(new FileWriter(this.fileName));
@@ -72,17 +73,18 @@ public class FileManager {
 
             Item item = items.get(i);
             
-            String productId = (String) item.getProductId();
-            String productName = item.getProductName();
-            String price = (String) item.getPrice();
-            String category = item.getCategory();
+            String productName = item.getName();
+            String description = item.getDescription();
+            String brand = item.getBrand();
+            String price = (String) item.getPrice():
+            String category = (String) item.getCategory();
+            String active = (String) item.getActive();
             String quantity = (String) item.getQuantity();
             String weight = (String) item.getWeight();
-            String weightType = item.getWeightType();
-            String brand = item.getBrand();
+            String weightType = (String) item.getWeightType();
 
-            fileData.write(productId + "," + productName + "," + price + "," + category 
-            + "," + quantity + "," + weight + "," + weightType + "," + brand);
+            fileData.write(productName + "," + description + "," + brand + "," + price 
+            + "," + category + "," + active + "," + quantity + "," + weight + "," + weightType);
             
             fileData.newLine();
         }
